@@ -1,0 +1,91 @@
+@import '../base';
+@import '../components/buttons';
+
+.navBar {
+    @include themify('navBackground') {
+        background: themed('navBackground');
+    }
+    transition: var(--defaultTransitionBg);
+    position: sticky;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    height: 55px;
+    box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.75);
+
+    .app-title {
+        @include themify('titleTextColor') {
+            color: themed('titleTextColor');
+        }
+        transition:var(--defaultTransitionColor);
+        width: 30vh;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        h1 > span {
+            @include themify('title2TextColor') {
+                color: themed('title2TextColor');
+            }
+            transition: var(--defaultTransitionColor);
+            font-style: italic;
+        }
+    }
+
+    .input-category {
+        width: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        form {
+            width: 85%;
+            background-color: red;
+            
+            input {
+                @include themify('inputBg'){
+                    background: themed('inputBg');
+                }
+                @include themify('titleTextColor'){
+                    color: themed('titleTextColor');
+                }
+                @include input-select();
+                width: 100%;
+                padding: 0 20px 0 20px;
+                transition: background .3s, color .3s ease;
+            }
+
+        }
+
+        select {
+            @include input-select();
+            width: 100px;
+            padding: 0px 0px 0px 10px;
+            background-color: black;
+            color: white;
+            outline: 0;
+            cursor: pointer;
+            border-right: 10px solid transparent;
+        }
+    }
+
+    .options {
+        width: 30vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        #themeSun {
+            margin-right: 10px;
+        }
+
+        svg {
+                width: 20px;
+                height: 20px;
+            }
+    }
+}

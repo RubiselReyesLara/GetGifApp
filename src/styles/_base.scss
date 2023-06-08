@@ -1,0 +1,88 @@
+:root {
+    --defaultTransitionBg: background .3s ease-in-out;
+    --defaultTransitionColor: color .3s ease-in-out; 
+}
+
+$themes: (
+  light: (
+    navBackground:  rgb(234, 234, 241) ,
+    headerFooterBackground: #fff,
+    titleTextColor: #272727, 
+    title2TextColor: #e06806, 
+    inputBg: #ffffff,
+    textColor: #000,
+    toggleBackground: #dfe4ea,
+    optionsColorIcon: rgb(25, 45, 59),
+    cardBg:rgb(223, 220, 223),
+    titleViewGif: #e6e6e6
+  ),
+  dark: (
+    navBackground: rgb(35, 63, 83),
+    headerFooterBackground: #36394c,
+    titleTextColor: #e6e6e6, 
+    title2TextColor: #e06806, 
+    inputBg: rgb(23, 44, 59),
+    textColor: #eff2f7,
+    toggleBackground: #606071,
+    optionsColorIcon: rgb(255, 255, 255),
+    cardBg:rgb(35, 63, 83),
+    titleViewGif: #e6e6e6
+  ),
+);
+// $propperties: (
+//     background,
+//     background,
+//     color,
+//     color,
+//     color,
+//     background,
+//     color,
+//     background,  
+// );
+
+
+@mixin themify($param) {
+  @each $theme, $map in $themes {
+    .theme-#{ $theme } & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $theme-map: map-merge($theme-map, ($key : $submap)) !global;
+      }
+      @content;
+      // animation: fade-#{$theme}-#{$param} 0.2s;
+    }
+  }
+}
+
+// @mixin loadFadeKeys($currentTheme, $theme-from, $theme-to) {
+//     $i : 0;
+//     @each $key, $submap in $theme-from{
+//         $i: $i + 1;
+//         @keyframes fade-#{$currentTheme}-#{$key} {
+//             0% { #{nth($propperties, $i)} : $submap }
+//             100% { #{nth($propperties, $i)} : nth(nth($theme-to, $i), 2) }
+//         }
+//     }
+// }
+
+@mixin input-select() {
+    @content;
+    border: 0;
+    height: 40px;
+    outline: none;
+    border-radius: 0px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+// @include loadFadeKeys(dark, map-get($themes, light), map-get($themes, dark));
+// @include loadFadeKeys(light, map-get($themes, dark), map-get($themes, light));
+
+@keyframes gifApparition {
+  0% { opacity: 0; }
+  100% { opacity: 100; }
+} 

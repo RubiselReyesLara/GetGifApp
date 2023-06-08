@@ -1,0 +1,22 @@
+@import '../base';
+
+button {
+    @include themify('optionsColorIcon') {
+        color: themed('optionsColorIcon');
+    }
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 10px;
+    border-radius: 50%;
+    transition: color .3s ease;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background .3s, color .3s ease;
+}
+
+button:hover {
+    @include themify('inputBg'){
+        background: themed('inputBg');
+    }
+}

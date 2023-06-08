@@ -1,0 +1,83 @@
+@import '../base';
+
+ol {
+    @include themify('inputBg'){
+        background: themed('inputBg');
+    }
+    padding: 20px;
+    margin: 0px auto;
+    width: calc(80% - 40px);
+    min-height: calc(100vh - 40px - 55px - 10px);
+    transition: background .3s ease;
+
+    h3 {
+        @include themify('titleTextColor'){
+            color: themed('titleTextColor');
+        }
+        display: inline;
+        transition: color .3s ease;
+    }
+
+    h3 + h3 {
+        color: rgb(139, 139, 139);
+        font-size: 15px;
+    }
+
+    .card-grid {
+        padding: 20px 0px 10px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-content: center;
+
+        .card {
+            @include themify('cardBg'){
+                background: themed('cardBg');
+            }
+            display: flex;
+            flex-direction: column;
+            width: 220px;
+            height: fit-content;
+            transition: background .3s ease;
+            animation: gifApparition .6s ease;
+
+
+            img {
+                width:220px;
+                height: auto;
+                cursor: pointer;
+            }
+
+            p {
+                @include themify('titleTextColor') {
+                    color: themed('titleTextColor');
+                }
+                font-weight: 700;
+                padding: 10px;
+                transition: color .3s ease;
+            }
+
+            button {
+                margin-bottom: 8px;
+            }
+
+            #btn-save {
+                margin: 0px 8px 0px 8px;
+            }
+
+            a {
+                @include themify('optionsColorIcon') {
+                    color: themed('optionsColorIcon');
+                }
+            }
+
+
+        }
+
+        .card:hover {
+            -webkit-box-shadow: 0px 0px 15px -2px #000000; 
+            box-shadow: 0px 0px 15px -2px #000000;
+        }
+    }
+}
