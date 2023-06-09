@@ -4,12 +4,14 @@ import { NavBar, GridGif } from '.';
 import { useThemeSwitcher } from './hooks/useThemeSwitcher';
 import { SavedGifs } from './components/SavedGifs';
 import { GifViewer } from './components/GifViewer';
+import { useGifHandling } from './hooks/useGifHandling';
 
 export const GetGifApp = () => {
     const [categories, setCategory] = useState([]);
     const [numberItems, setNumberItems] = useState(parseInt(localStorage.getItem('numberItems')) || 10);
-    const [theme, setNewTheme] = useThemeSwitcher();
     const [image, setImage] = useState({});
+    const [theme, setNewTheme] = useThemeSwitcher();
+    const [gifHandling, setGifHandling] = useGifHandling();
 
     const onAddCategory = (value) => {
         if( categories.includes(value) ) return;
@@ -33,12 +35,13 @@ export const GetGifApp = () => {
                                                         key = { category } 
                                                         category = { category } 
                                                         numberItems = { numberItems }
-                                                        setImage = { setImage } />)
+                                                        setImage = { setImage }
+                                                        setGifHandling = { setGifHandling } />)
                 }
             </ol>
 
             {/* Saved gifs */}
-            <SavedGifs />
+            <SavedGifs setNewTheme = { setNewTheme } gifs = { gifHandling }/>
 
         </div>
     );

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faFloppyDisk, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 
-export const GifItem = ({ setImage, title, url }) => {
+export const GifItem = ({ setImage, title, url, firstButtonFunction, fbf_Icon }) => {
     const [blob, setBlob] = useState( '' );
 
     const getImage = async(url) => {
@@ -27,7 +27,7 @@ export const GifItem = ({ setImage, title, url }) => {
             <div>
                 <p> { title } </p>
                 <div>
-                    <button id = 'btn-save'><FontAwesomeIcon icon = { faFloppyDisk } /></button>
+                    <button id = 'btn-save' onClick = { firstButtonFunction }><FontAwesomeIcon icon = { fbf_Icon } /></button>
                     <button id = 'btn-download'><a href = { blob } download = { title }><FontAwesomeIcon icon = { faDownload } /></a></button>
                 </div>
             </div>

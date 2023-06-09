@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GifItem } from './GifItem';
 import { useFetchGifs } from '../hooks/useFetchGifs';
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 
-export const GridGif = ({ category, numberItems, theme, setImage }) => {
-    console.log(theme)
-
+export const GridGif = ({ category, numberItems, theme, setImage, setGifHandling }) => {
     const { images, isLoading } = useFetchGifs( category, numberItems );
-
     return (
         <>
             <h3>{ '"' + category[0].toUpperCase() + category.substring(1, category.length) + '", ' }</h3>
@@ -19,7 +17,7 @@ export const GridGif = ({ category, numberItems, theme, setImage }) => {
             <div className='card-grid'>
             { images.map( image => {
                 return (
-                    <GifItem key = { image.id } setImage = { setImage } { ...image }  />
+                    <GifItem key = { image.id } setImage = { setImage } { ...image } firstButtonFunction = { () => setGifHandling( image ) } fbf_Icon = { faFloppyDisk } />
                 );
             }) }
             </div>

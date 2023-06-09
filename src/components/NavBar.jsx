@@ -3,7 +3,6 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { SeeSavedGifs }from "./SeeSavedGifs";
 
 const goToGH = () => {
-    console.log('works');
     window.open('https://github.com/RubiselReyesLara', '_blank');
 }
 
