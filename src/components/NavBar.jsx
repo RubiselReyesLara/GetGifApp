@@ -6,7 +6,7 @@ const goToGH = () => {
     window.open('https://github.com/RubiselReyesLara', '_blank');
 }
 
-export const NavBar = ({ onNewCategory, numberItems, setNumberItems, setNewTheme }) => {
+export const NavBar = ({ setInitApp, onNewCategory, numberItems, setNumberItems, setNewTheme }) => {
 
     return (
         <nav className="navBar">
@@ -14,7 +14,7 @@ export const NavBar = ({ onNewCategory, numberItems, setNumberItems, setNewTheme
                 <h1>Get <span>Gif</span> App</h1>
             </div>
             <div className="input-category">
-                <AddCategory onNewCategory = { value => onNewCategory(value) } numberItems = { numberItems } />
+                <AddCategory setInitApp = { setInitApp } onNewCategory = { value => onNewCategory(value) } numberItems = { numberItems }/>
                 <NumberItemsSelect setNumberItems = { setNumberItems }/>
             </div>
             <div className="options">

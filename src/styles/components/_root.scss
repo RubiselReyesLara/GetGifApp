@@ -5,8 +5,8 @@
         background: themed('navBackground');
     }
     transition: var(--defaultTransitionBg);
-    width: calc(100% - 10px);
-    height: calc(100vh - 10px);
-    border: 5px solid black;
+    width: 100%;
+    height: 100vh;
+    // border: 5px solid black;
     overflow-y: scroll;
 }

@@ -82,7 +82,22 @@ $themes: (
 // @include loadFadeKeys(dark, map-get($themes, light), map-get($themes, dark));
 // @include loadFadeKeys(light, map-get($themes, dark), map-get($themes, light));
 
-@keyframes gifApparition {
+@keyframes fadeInSavedGifs {
   0% { opacity: 0; }
   100% { opacity: 100; }
+} 
+
+@keyframes fadeOutSavedGifs {
+  0% { opacity: 100; }
+  100% { opacity: 0; display: none; }
+} 
+
+@keyframes gifSlipIn {
+  0% { right: -100vh; }
+  100% { right: 0; }
+} 
+
+@keyframes gifSlipOut {
+  0% { right: 0; }
+  100% { right: -100vh; display: none; }
 } 

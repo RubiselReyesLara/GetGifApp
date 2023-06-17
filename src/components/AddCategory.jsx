@@ -1,6 +1,6 @@
 import React from 'react'   
 
-export const AddCategory = ({onNewCategory, numberItems}) => {
+export const AddCategory = ({setInitApp, onNewCategory, numberItems}) => {
     const [ inputValue, setInputValue ] = React.useState('');
  
     const onChange = (value) => {
@@ -12,6 +12,7 @@ export const AddCategory = ({onNewCategory, numberItems}) => {
         if( inputValue.trim().length <= 0 ) return;
         onNewCategory( inputValue.trim() )
         setInputValue('');
+        setInitApp(true);
     }
 
 

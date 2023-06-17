@@ -1,10 +1,22 @@
-import React, { useEffect } from 'react';
 import { GifItem } from './GifItem';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import Swal from "sweetalert2";  
 
-export const GridGif = ({ category, numberItems, theme, setImage, setGifHandling }) => {
+export const GridGif = ({ category, numberItems, setImage, setGif }) => {
     const { images, isLoading } = useFetchGifs( category, numberItems );
+
+    const saveGifLocalStorage = (image) => {
+        setGif( image );
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Gif saved successfully',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }   
+
     return (
         <>
             <h3>{ '"' + category[0].toUpperCase() + category.substring(1, category.length) + '", ' }</h3>
@@ -17,7 +29,7 @@ export const GridGif = ({ category, numberItems, theme, setImage, setGifHandling
             <div className='card-grid'>
             { images.map( image => {
                 return (
-                    <GifItem key = { image.id } setImage = { setImage } { ...image } firstButtonFunction = { () => setGifHandling( image ) } fbf_Icon = { faFloppyDisk } />
+                    <GifItem key = { image.id } setImage = { setImage } { ...image } firstButtonFunction = { () => saveGifLocalStorage(image) } fbf_Icon = { faFloppyDisk } />
                 );
             }) }
             </div>

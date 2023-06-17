@@ -1,26 +1,103 @@
 @import '../base';
 
 .div-saved-gifs {
-    display: none;
-    background-color: rgba(0,0,0,0.5);
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    // display: none;
-    // opacity: 0;
-    transition: background-color 1s linear;
+    background-color: rgba(0, 0, 0, 0);
+    transition: visibility .3s, background-color .3s ease-in-out;
 
     .div-gifs {
-        background-color: yellow;
-        width: calc(30% - 40px);
-        height:  calc(100vh - 40px);
+        @include themify('inputBg'){
+            background-color: themed('inputBg');
+        }
+        width: 680px;
+        height:  100vh;
         position: fixed;
         top: 0px;
-        right: 0px;
+        right: -100vh;
+        overflow: auto;
+        transition: background-color .3s, right .3s ease-in-out;
+
+        .card {
+            @include themify('cardBg'){
+                background-color: themed('cardBg');
+            }
+            margin-bottom: 10px;
+            height: fit-content;
+            transition: background-color .3s ease-in-out;
+
+            img {
+                width: 300px;
+                object-fit: cover;
+            }
+
+            div {
+                width: 300px;
+
+                
+                p {
+                    @include themify('titleTextColor'){
+                        color: themed('titleTextColor');
+                    }
+                    padding: 10px;
+                    font-weight: 700;
+                    transition: color .3s ease-in-out;
+                }
+
+                div {
+                    padding: 5px;
+
+                    #btn-save {
+                        margin-right: 5px;
+                    }
+
+                    #btn-download {
+                        a {
+                            @include themify('titleTextColor'){
+                                color: themed('titleTextColor');
+                            }
+                            transition: color .3s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-div-gifs { 
+        @include themify('navBackground'){
+            background-color: themed('navBackground');
+        }
+        position: sticky;
+        top: 0;
         padding: 10px;
-        border: 10px solid black;
-        transition: right .3s linear;
+        box-shadow: -3px -16px 15px 14px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -3px -16px 15px 14px rgba(0,0,0,0.75);
+        -moz-box-shadow: -3px -16px 15px 14px rgba(0,0,0,0.75);
+        transition: background-color .3s ease-in-out;
+    
+        p {
+            @include themify('titleTextColor'){
+                color: themed('titleTextColor');
+            }
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 10px;
+            transition: color .3s ease-in-out;
+        }
+    }
+
+    .body-div-gifs {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
     }
 }

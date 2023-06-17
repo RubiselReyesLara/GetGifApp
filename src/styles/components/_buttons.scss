@@ -1,6 +1,6 @@
 @import '../base';
 
-button {
+#btn-save, #btn-download, .btn-back, #themeSun, #seeSavedGifs {
     @include themify('optionsColorIcon') {
         color: themed('optionsColorIcon');
     }
@@ -15,7 +15,7 @@ button {
     transition: background .3s, color .3s ease;
 }
 
-button:hover {
+#btn-save:hover, #btn-download:hover, .btn-back:hover, #themeSun:hover, #seeSavedGifs:hover {
     @include themify('inputBg'){
         background: themed('inputBg');
     }

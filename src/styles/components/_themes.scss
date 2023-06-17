@@ -1,8 +1,7 @@
 @import '../base';
 
 .theme-dark, .theme-light {
-    width: calc(inherit + 10px);
-    min-height: calc(100vh - 10px);
+    min-height: 100vh;
     position: inherit;
     transition: background .3s ease;
 }

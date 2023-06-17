@@ -1,0 +1,47 @@
+@import '../base';
+
+.init-message {
+
+    .h3-hello {
+        @include themify('titleTextColor') {
+            color: themed('titleTextColor');
+        }
+        display: flex;
+        font-size: 25px;
+        padding-bottom: 5px;
+        transition: color .3s ease-in-out;
+        
+        .normal-word {
+            margin-left: 5px;
+        }
+
+        .italic-word {
+            color: #e06806;
+            margin-left: 5px;
+            font-style: italic;
+        }
+    }
+
+    .p-invitation {
+        @include themify('titleTextColor') {
+            color: themed('titleTextColor');
+        }
+        font-size: 17px;
+        font-style: italic;
+        margin-bottom: 5px;
+        transition: color .3s ease-in-out;
+    }
+
+    .init-message-p1, .init-message-p2  {
+         @include themify('titleTextColor') {
+            color: themed('titleTextColor');
+        }
+        font-size: 15px;
+        margin-bottom: 5px;
+        transition: color .3s ease-in-out;
+    }
+
+    a {
+        color: #e06806;
+    }
+}
