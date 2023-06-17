@@ -10,8 +10,6 @@
     top:0;
     display: flex;
     justify-content: space-between;
-    padding-left: 20vh;
-    padding-right: 20vh;
     height: 55px;
     box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.75);
@@ -22,7 +20,7 @@
             color: themed('titleTextColor');
         }
         transition:var(--defaultTransitionColor);
-        width: 30vh;
+        width: 30vh; ////////////////////////////////////
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -37,7 +35,6 @@
     }
 
     .input-category {
-        width: 70vh;
         display: flex;
         align-items: center;
         justify-content: center;

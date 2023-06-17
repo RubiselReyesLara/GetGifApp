@@ -1,0 +1,35 @@
+@import '../base';
+
+@media (min-width: 900px) {
+    // navigation bar
+    .navBar {
+        padding-left: 20vh;
+        padding-right: 20vh; 
+
+        .input-category {
+            width: 70vh;
+        }
+    }
+    // navigation bar
+
+    // grid gif
+    ol {
+        width: calc(80% - 40px);
+
+        .card {
+            width: 220px;
+
+            img {
+                width:220px;
+                height: auto;
+                cursor: pointer;
+            }
+        }
+    }
+    // grid gif
+    .div-gifs {
+        width: 680px;
+    }
+
+}
+

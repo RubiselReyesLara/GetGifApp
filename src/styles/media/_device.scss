@@ -1,0 +1,44 @@
+@import '../base';
+
+@media (max-width: 950px) {
+    // navigation bar
+    .navBar {
+        padding-left: 2vh;
+        padding-right: 2vh; 
+
+        .app-title {
+            text-align: center;
+            h1 {font-size: 16px};
+        }
+
+        .input-category {
+            width: 80vh;
+        }
+
+        #themeSun {
+            display: none;
+        }
+    }
+    // navigation bar
+
+    // grid gif
+    ol {
+        width: auto;
+
+        .card {
+            width: 350px;
+
+            img {
+                width:350px;
+                height: auto;
+                cursor: pointer;
+            }
+        }
+    }
+    // grid gif
+
+    // saved gifs
+    .div-gifs {
+        width: 100%;
+    }
+}

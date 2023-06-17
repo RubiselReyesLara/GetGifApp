@@ -37,17 +37,11 @@ ol {
             }
             display: flex;
             flex-direction: column;
-            width: 220px;
             height: fit-content;
             transition: background .3s ease;
             animation: gifApparition .6s ease;
 
 
-            img {
-                width:220px;
-                height: auto;
-                cursor: pointer;
-            }
 
             p {
                 @include themify('titleTextColor') {
