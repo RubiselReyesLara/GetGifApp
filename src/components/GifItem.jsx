@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,4 +34,9 @@ export const GifItem = ({ setImage, title, url, firstButtonFunction, fbf_Icon })
             </div>
         </div>
     );
+}
+
+GifItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
 }
