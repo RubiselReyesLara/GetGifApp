@@ -1,5 +1,4 @@
 export const getGifs = async(category, numberItems) => {
-    console.log(numberItems)
 
     const url = `https://api.giphy.com/v1/gifs/search?api_key=ITtZCbiMlxK5IcrIrMAqp9FoekOuqeWe&q=${ category }&limit=${ numberItems }`;
 
@@ -7,7 +6,6 @@ export const getGifs = async(category, numberItems) => {
     const { data = [] } = await response.json();
 
     const gifs = data.map(img => { 
-        console.log(img);
         return {
             id: img.id,
             title: img.title,
